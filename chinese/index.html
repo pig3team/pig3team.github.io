@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mitech</title>
+  <link rel="icon" href="../img/mitech.ico" type="image/x-icon"/>
+    <meta name="keywords" content="Mitech" />
+    <meta name="description" content="Mitech" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="email=no" name="format-detection">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+
+  <!-- Link Swiper's CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/css.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/lightbox.css" media="screen"/>
+  <link rel="stylesheet" href="../css/video-js.css" />
+  <script type="text/javascript" src="../js/video.min.js" ></script>
+  <script src="../js/jquery-3.2.1.js"></script>
+  <script type="text/javascript" src="../js/swiper.min.js" ></script>
+  <!-- Demo styles -->
+  <style>
+  .dropdown-menu>li>a {
+	  display:block;
+    padding: 3px 20px;
+    clear: both;
+    color: #000;
+    white-space: nowrap;
+	background:#fff;
+}
+.dropdown-menu{ background:none;}
+  .navbar-default { background:none; border:0; color:#fff;}
+  .navbar-default .navbar-nav>li>a {color: #fff;}
+  .navbar-nav {float:right;  margin: 0; font-size:16px;}
+	.navbar-wrapper {margin-top:0px; padding:0; background:#000;}
+    .navbar-inverse {background:#000; border:none;}
+	.navbar-inverse .navbar-nav>li>a {color:#fff; line-height:40px; padding:0 35px;}
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+	 .gallery-top {
+      height: 80%;
+      width: 100%;
+    }
+    .gallery-thumbs {
+      height: 20%;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+    .gallery-thumbs .swiper-slide {
+      height: 100%;
+      opacity: 0.4;
+    }
+    .gallery-thumbs .swiper-slide-active {
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+<!--
+ <div class="index_pupup" style="display: block;">
+		<div class="index_content">
+			<div class="close1">
+
+             <div class="col-lg-12 visible-lg-block">
+    <div class="dizhi_tc">
+    合约地址:
+    <div class="baohan">
+   <input id="foo" type="text" value="0xD9bDd6be8E9Ef902C349fbA72C032B0D22dF05A6" class="baohan_inut" readonly="readonly">
+<button class="btn1 button" data-clipboard-action="copy" data-clipboard-target="#foo">Copy</button>
+    </div>
+    <div class="erweima juzhong"><img src="/img/erweima.png"></div>
+    <p>注意：尽可能使用MyEtherWallet、Mist、Imtoken等ERC20钱包转币，若使用交易所转币，请务必联系我们官方人员进行登记</p>
+<p class="closezcbtn" style="display:block; width: 100px; height:30px; line-height:30px; text-align: center; font-size: 16px; border: #FFF solid 1px; margin: 0 auto; cursor: pointer;">关闭</p>
+    </div>
+    </div>
+
+    <div class="col-xs-12 visible-xs-block">
+    <div class="dizhi_tc">
+    合约地址:
+    <div class="baohan">
+   <input id="foo2" type="text" value="0xD9bDd6be8E9Ef902C349fbA72C032B0D22dF05A6" class="moblie_baohan_input" readonly="readonly">
+<button class="btn1 moblie_button" data-clipboard-action="copy" data-clipboard-target="#foo2">Copy</button>
+    </div>
+    <div class="erweima juzhong"><img src="/img/erweima.png"></div>
+    <p>注意：尽可能使用MyEtherWallet、Mist、Imtoken等ERC20钱包转币，若使用交易所转币，请务必联系我们官方人员进行登记</p>
+<p class="closezcbtn" style="display:block; width: 100px; height:30px; line-height:30px; text-align: center; font-size: 16px; border: #FFF solid 1px; margin: 0 auto; cursor: pointer;">关闭</p>
+    </div>
+    </div>
+
+            </div>
+		</div>
+	</div>
+-->
+<script>
+$('.closezcbtn').click(function(){$('.index_pupup').hide()});
+</script>
+
+    <div class="navbar-wrapper" style="position:fixed; top:0; width:100%; z-index:100; height:50px;">
+      <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">
+              <img src="../img/logo.png" alt="" class="logo duiqi"><span class="white">MITECH</span>
+              </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">首页</a></li>
+                <li><a href="token.html">令牌</a></li>
+                <li><a href="#team">团队 </a></li>
+                <li><a href="#">白皮书</a></li>
+                <li><a href="question.html">常见问题</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+      <div class="one">
+      <div class="container">
+      <div class="col-lg-12 juli_top mit"><img src="../img/logo1.png"><p class="size24 white">MITECH</p></div>
+      <div class="col-lg-12 juli_top1 img_change"><img src="../img/bg1_p.png" width="70%"></div>
+      <div class="col-lg-12 juzhong juli_top15">
+
+      </div>
+      <div class="col-lg-12 juli_top2"><a href="#" class="anniu play-video-btn">观看视频<img src="../img/go.png" class="duiqi"></a></div>
+      </div>
+      </div>
+      </div>
+
+      <div class="swiper-slide">
+      <div class="two">
+      <div class="container">
+      <div class="col-lg-12 blue juli_top"><b>MIT的数据以区块的方式永久储存</b></div>
+      <div class="col-lg-12 juli_top1 white juli_left jianju">区块按时间顺序逐个 先后生成并连接成链，每一个区块记录了创建期间发生的所有交易信息。 区块的数据结构一般分为区块头(header)和区块体(body)，MIT的区块头能链接到前一个区块并且通过时间戳特性保证历史数据完整性;区块体则包含了经过验证的、区块创建过程中产生的所有交易信息。</div>
+      <div class="col-lg-12 juli_top15"><img src="../img/1.gif"></div>
+      </div>
+      </div>
+      </div>
+      <div class="swiper-slide">
+      <div class="three">
+      <div class="container">
+      <div class="col-lg-12 blue juli_top"><b>我们的核心技术</b></div>
+      <div class="col-lg-12 juli_top1 white juli_left jianju">通信:MIT采用P2P技术来组织各个网络节点，每个节点通过多播实现路由、新节点识别和数据传播等功能，智能识别到数据信息并完成传感需求</div>
+      </div>
+      </div>
+      </div>
+      <div class="swiper-slide">
+      <div class="four">
+      <div class="container">
+      <div class="col-lg-12 juli_top white juli_left jianju">存储:MIT数据在运行期以块链式数据结构存储在内存中，最终会持久化存储到数据库中。对于较大的文件，也可存储在链外的文件系统里，同时将摘要(数字指纹)保存到链上用以自证</div>
+      </div>
+      </div>
+      </div>
+      <div class="swiper-slide">
+      <div class="five">
+      <div class="container">
+      <div class="col-lg-12 juli_top white juli_left jianju">安全机制:MIT系统通过多种密码学原理进行数据加密及隐私保护。完全超越其他涉及到金融应用的区块链系统，高强度高可靠的安全算法达到国密级别，在效率上世界领先</div>
+      </div>
+      </div>
+      </div>
+      <div class="swiper-slide">
+      <div class="six">
+       <div class="container">
+      <div class="col-lg-12 juli_top white juli_left jianju">共识机制:在MIT系统中各个节点达成一致的策略和方法，根据系统类型及应用场景的不同灵活选取。PBFT该共识机制允许拜占庭容错。该共识机制允许强监管节点参与，具备权限分级能力，性能更高，耗能更低
+</div>
+      </div>
+      </div>
+      </div>
+      <div class="swiper-slide">
+      <div class="seven">
+      <div class="container">
+      <div class="col-lg-12 juli_top blue"><b>发展历程</b></div>
+      <div class="col-lg-12 juli_top1 fazhan"><img src="../img/licheng.png"></div>
+      </div>
+      </div>
+      </div>
+      <div class="swiper-slide">
+      <div class="nine">
+      <div class="container">
+      <div class="col-lg-12 juli_top blue"><b>活动现场</b></div>
+<style>@media screen and (min-width: 1200px) {
+.hyhy1{ margin-top: 0.5rem; width: 33%; }
+.hyhy2{ width: 200px; height: 200px; }
+}
+</style>
+      <!--现场照片-->
+      <div class="col-lg-12 juli_top3" style="overflow-y:auto;">
+       	  <div class="col-lg-3 juli_top1 col-xs-6 hyhy1"><a class="example-image-link" href="../uploadfdea1e82-c40e-41ef-9302-84ef17b490ac.jpg" data-lightbox="example-set"><img class="example-image hyhy2" src="../upload/fdea1e82-c40e-41ef-9302-84ef17b490ac.jpg" width="150" height="150" style="border:3px solid #eee;"/></a></div>
+       	  <div class="col-lg-3 juli_top1 col-xs-6 hyhy1"><a class="example-image-link" href="../uploadfcac2f7e-870e-4f8b-82ff-cd57a242e20c.png" data-lightbox="example-set"><img class="example-image hyhy2" src="../upload/fcac2f7e-870e-4f8b-82ff-cd57a242e20c.png" width="150" height="150" style="border:3px solid #eee;"/></a></div>
+       	  <div class="col-lg-3 juli_top1 col-xs-6 hyhy1"><a class="example-image-link" href="../upload533b902d-aa48-4af1-adf2-b56e698ab511.png" data-lightbox="example-set"><img class="example-image hyhy2" src="../upload/533b902d-aa48-4af1-adf2-b56e698ab511.png" width="150" height="150" style="border:3px solid #eee;"/></a></div>
+       	  <div class="col-lg-3 juli_top1 col-xs-6 hyhy1"><a class="example-image-link" href="../upload50ee7df8-51ae-45ac-9d16-820a3028c5d2.jpg" data-lightbox="example-set"><img class="example-image hyhy2" src="../upload/50ee7df8-51ae-45ac-9d16-820a3028c5d2.jpg" width="150" height="150" style="border:3px solid #eee;"/></a></div>
+       	  <div class="col-lg-3 juli_top1 col-xs-6 hyhy1"><a class="example-image-link" href="../uploadfb8824b6-2356-4d9a-8511-93312ad40030.png" data-lightbox="example-set"><img class="example-image hyhy2" src="../upload/fb8824b6-2356-4d9a-8511-93312ad40030.png" width="150" height="150" style="border:3px solid #eee;"/></a></div>
+       	  <div class="col-lg-3 juli_top1 col-xs-6 hyhy1"><a class="example-image-link" href="../upload81853b71-b0e9-4c1b-b082-92530eb0466c.jpg" data-lightbox="example-set"><img class="example-image hyhy2" src="../upload/81853b71-b0e9-4c1b-b082-92530eb0466c.jpg" width="150" height="150" style="border:3px solid #eee;"/></a></div>
+           </div>
+      <!--现场照片结束-->
+      </div>
+      </div>
+      </div>
+
+      <div class="swiper-slide" id="team">
+      <div class="team">
+      <div class="container">
+      <div class="col-lg-12 juli_top blue"><b>团队</b></div>
+      </div>
+      <div class="container">
+            <div class="col-lg-3 juli_top15 col-xs-6">
+      <div class="team_jt">
+      <div class="team_jt1"><div class="team_head"><img src="../upload/51b06ba7-255c-4b8d-a8e0-f63808499a2c.jpg"></div><p class="white">Santh<br><span  class="size14 white">CEO兼联合创始人</span></p><p class="white juli_top15 jiesao juli_left">新加坡国立大学计算机科学教授，主要从事区块链物联网安全方面的研究。曾获得了麻省理工学院TR35亚洲的多项重要大奖。拥有计算机工程学士学位和管理硕士学位。Santh已经成功推动几个高达数百万美元的复杂项目，并取得了优秀的成果。对区块链和加密的数字货币技术十分热忱，并坚信去中心化的未来。专业知识范围广泛，包括但不限于区块链业务整合，战略规划，项目管理，架构解决方案，流程改进，公开演讲，公司传讯以及跨职能领导。</p></div>
+      </div>
+      </div>
+            <div class="col-lg-3 juli_top15 col-xs-6">
+      <div class="team_jt">
+      <div class="team_jt1"><div class="team_head"><img src="../upload/13f7c002-cb87-4149-bc91-83bbf66cb07c.png"></div><p class="white">Khal<br><span  class="size14 white">CTO兼联合创始人</span></p><p class="white juli_top15 jiesao juli_left">美国麻省理工大学计算机科学博士，多年研究区块链协议中的博弈论激励机制和智能合约的形式化验证。曾经在以太坊找漏洞激励计划中找到了多个漏洞。是一位经验丰富的软件开发者。他曾是数据结构和算法团队的成员，团队曾经开发了IP路由的新型数据结构。</p></div>
+      </div>
+      </div>
+            <div class="col-lg-3 juli_top15 col-xs-6">
+      <div class="team_jt">
+      <div class="team_jt1"><div class="team_head"><img src="../upload/3cf634b0-6cb3-41d6-8502-192090b1cf58.jpg"></div><p class="white">Miklos<br><span  class="size14 white">首席工程师兼联合创始人</span></p><p class="white juli_top15 jiesao juli_left">新加坡电子行业工学博士（毕业于美国明尼苏达大学），曾任职于贝尔实验室、美国霍尼韦尔公司，集成电路设计领域的资深专家，IEEE高级会员。</p></div>
+      </div>
+      </div>
+            <div class="col-lg-3 juli_top15 col-xs-6">
+      <div class="team_jt">
+      <div class="team_jt1"><div class="team_head"><img src="../upload/16c6d158-74c5-440e-9dd9-d51366ecca2b.jpg"></div><p class="white">Drew Landis <br><span  class="size14 white"></span></p><p class="white juli_top15 jiesao juli_left">高级后端工程师和Linux系统管理员。他曾经为多个社会营销平台和广告网络开发大型基础设施，从而积累了丰富的经验。 他也对构建高性能的多平台应用程序兴趣浓厚。 Drew Landis于2015年初就开始参区块链和加密货币的开发。</p></div>
+      </div>
+      </div>
+            </div>
+      </div>
+      </div>
+
+   	        <div class="swiper-slide">
+      <div class="team">
+       <div class="container">
+      <div class="col-lg-12 juli_top blue"><b></b></div>
+      </div>
+      <div class="container">
+            <div class="col-lg-3 juli_top15 col-xs-6">
+      <div class="team_jt">
+      <div class="team_jt1"><div class="team_head"><img src="../upload/7ac805c0-3a50-405d-8956-ade6b9be5009.jpg"></div><p class="white">David Vaknin<br><span  class="size14 white"></span></p><p class="white juli_top15 jiesao juli_left">美国麻省理工工学硕士，具有5年超大规模集成电路设计与验证经验，对RFID芯片设计全流程、SOC芯片架构、数模混合电路设计等具有丰富的实际项目经验。曾带领团队完成多款导航定位基带芯片，通信基带芯片的开发，完成过AES、DES等加密模块设计。精通区块链底层共识机制的原理和相关非对称加密算法。</p></div>
+      </div>
+      </div>
+            <div class="col-lg-3 juli_top15 col-xs-6">
+      <div class="team_jt">
+      <div class="team_jt1"><div class="team_head"><img src="../upload/383d4542-3b9c-4fc0-8efe-a7981853b464.jpg"></div><p class="white">Leonid Miretsky<br><span  class="size14 white"></span></p><p class="white juli_top15 jiesao juli_left">美国麻省理工工程硕士，十多年嵌入式系统的软硬件设计开发经验，多年致力于物联网领域的RFID和区块链技术的研发。</p></div>
+      </div>
+      </div>
+            <div class="col-lg-3 juli_top15 col-xs-6">
+      <div class="team_jt">
+      <div class="team_jt1"><div class="team_head"><img src="../upload/b3a0d4d9-6d92-4e31-911b-8d1f5b885bd3.jpg"></div><p class="white">Kathleen<br><span  class="size14 white"></span></p><p class="white juli_top15 jiesao juli_left">工商企管专业，美国阿姆斯壮大学BBA学位，资深财务专家，13年财务工作经验，对制定并实施企业战略、经营计划等政策方略，实现企业的经营管理目标及发展目标具有非常丰富的实际经验。</p></div>
+      </div>
+      </div>
+            <div class="col-lg-3 juli_top15 col-xs-6">
+      <div class="team_jt">
+      <div class="team_jt1"><div class="team_head"><img src="../upload/55d25e1c-026f-43d1-bf90-6e930b8b9107.jpg"></div><p class="white">Hiromitsu Hattori<br><span  class="size14 white"></span></p><p class="white juli_top15 jiesao juli_left">韩国首尔，韩国高丽大学工学硕士，韩国工业协会会员，其研究成果曾发表在世界顶级期刊《自然·通讯》上，参与编写物联网工程专业系列教材《物联网导论》。目前的研究方向涵盖区块链技术与物联网安全技术相结合的交叉学科。</p></div>
+      </div>
+      </div>
+            </div>
+      </div>
+      </div>
+
+      <div class="swiper-slide">
+      <div class="hezuo">
+      <div class="container">
+      <div class="col-lg-12 juli_top blue"><b>合作伙伴</b></div>
+      </div>
+      <div class="container juli_top">
+      <div class="col-lg-12">
+      <div class="col-lg-3 juli_top1 col-xs-6"><img src="../img/friends1.png" width="70%"></div>
+      <div class="col-lg-3 juli_top1 col-xs-6"><img src="../img/friends2.png" width="35%"></div>
+       <div class="col-lg-3 juli_top1 col-xs-6"><img src="../img/friends3.png" width="80%"></div>
+      <div class="col-lg-3 juli_top1 col-xs-6"><img src="../img/friends4.png" width="30%"></div>
+      </div>
+      <div class="col-lg-12 juli_top15">
+      <div class="col-lg-3 juli_top1 col-xs-6"><img src="../img/friends5.png" width="70%"></div>
+      <div class="col-lg-3 juli_top1 col-xs-6"><img src="../img/friends6.png" width="70%"></div>
+       <div class="col-lg-3 juli_top1 col-xs-6"><img src="../img/friends7.png" width="50%"></div>
+      <div class="col-lg-3 juli_top1 col-xs-6"><img src="../img/friends8.png" width="30%"></div>
+      </div>
+      </div>
+      </div>
+      </div>
+
+      <div class="swiper-slide">
+      <div class="link">
+      <div class="container">
+      <div class="col-lg-12 juli_top blue"><b>联系我们</b></div>
+      <div class="col-lg-12 juli_top link_us footer_flex clearfix">
+      <div class="col-lg-3 juli_top1">
+      <li>
+          <img src="../img/pic1.png" class='img-n'>
+          <div class="flex-footer" style=" background:url('../img/youjian.png') no-repeat center top; width:210px; height:58px; top:-80px; left:8%;">
+             support@mitech.im
+          </div>
+      </li>
+      </div>
+      <div class="col-lg-3 juli_top1"><a href="https://twitter.com/mitech_im" target="_blank"><img src="../img/pic2.png"></a></div>
+      <div class="col-lg-3 juli_top1">
+       <li>
+          <img src="../img/pic3.png" class='img-n'>
+          <div class="flex-footer">
+              <img src="../img/flexewmpic2.png" width="100%">
+          </div>
+      </li>
+      </div>
+      <div class="col-lg-3 juli_top1"><a href="https://t.me/frommitech" target="_blank"><img src="../img/pic4.png"></a></div>
+
+      </div>
+      <div class="col-lg-12 juli_top4"><img src="../img/logo.png"><p class="white size14">©2017 MITECH  |  保留所有权利</p></div>
+      </div>
+      </div>
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="xiala">
+  <div class="dropdown">
+	<button type="button" class="btn dropdown-toggle" id="dropdownMenu1"
+			data-toggle="dropdown" style="background:none; color:#fff;">
+		中文
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="../english/index.html">英文</a>
+		</li>
+	</ul>
+</div>
+  </div>
+  	<!--关闭-->
+		<div class="close-video" style="display:none;"></div>
+		<!--视频-->
+		<div class="video" style="display:none;">
+			<video id="my-video" class="video-js" controls preload="auto" width="376" height="282">
+				<!-- <source src="http://www.mitech.im/img/mi_1.mp4" type="video/mp4"> -->
+		 	 </video>
+		</div>
+	</div>
+
+
+
+
+<!--复制-->
+<script src="../js/clipboard.min.js"></script>
+<script>
+var clipboard = new Clipboard('.btn1');
+clipboard.on('success', function(e) {
+	console.log(e);
+});
+clipboard.on('error', function(e) {
+	console.log(e);
+});
+</script>
+
+
+<script type="text/javascript">
+	//视频播放
+	var myPlayer = videojs('my-video');
+	videojs("my-video").ready(function(){
+		var myPlayer = this;
+		//公司视频播放
+		$(".btn-video ,.play-video-btn").click(function(){
+			$('#my-video_html5_api').attr('src','https://hlkj-cdnjs150.oss-cn-hangzhou.aliyuncs.com/ah/mit/img/mi_1.mp4');
+ 			$('#my-video_html5_api source').attr('src','https://hlkj-cdnjs150.oss-cn-hangzhou.aliyuncs.com/ah/mit/img/mi_1.mp4');
+		 	$('.video ,.close-video').show();
+    		myPlayer.play();
+		});
+		//关闭视频
+    	$(".close-video").click(function(){
+		 	$('.video ,.close-video').hide();
+        	myPlayer.pause();
+     	});
+
+	});
+
+	//员工视频
+	function open_video(index){
+ 		$('#my-video_html5_api').attr('src','../image/'+index+'.mp4');
+ 		$('#my-video_html5_api source').attr('src','../image/'+index+'.mp4');
+ 		$('.video ,.close-video').show();
+		myPlayer.play();
+ 	}
+</script>
+ <script src="../js/jquery-1.10.2.min.js"></script>
+ <script src="../js/lightbox-2.6.min.js"></script>
+ <script src="../js/jquery.min.js"></script>
+ <script src="../js/bootstrap.min.js"></script>
+
+  <!-- Initialize Swiper -->
+ <script>
+	 var swiper = new Swiper('.swiper-container', {
+	     direction: 'vertical',
+	     slidesPerView: 1,
+	     spaceBetween: 0,
+	     mousewheel: true,
+	     pagination: {
+	       el: '.swiper-pagination',
+	       clickable: true,
+	     },
+	 });
+</script>
+<!--弹出-->
+
+</body>
+</html>

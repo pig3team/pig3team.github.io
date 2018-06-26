@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mitech</title>
+  <link rel="icon" href="../img/mitech.ico" type="image/x-icon"/>
+    <meta name="keywords" content="Mitech" />
+    <meta name="description" content="Mitech" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="email=no" name="format-detection">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+
+  <!-- Link Swiper's CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/css.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/lightbox.css" media="screen"/>
+  <link rel="stylesheet" href="../css/video-js.css" />
+  <script type="text/javascript" src="../js/video.min.js" ></script>
+  <script type="text/javascript" src="../js/jquery-1.11.1.min.js" ></script>
+  <script type="text/javascript" src="../js/swiper.min.js" ></script>
+  <!-- Demo styles -->
+  <style>.dropdown-menu>li>a {
+	  display:block;
+    padding: 3px 20px;
+    clear: both;
+    color: #000;
+    white-space: nowrap;
+	background:#fff;
+}
+.dropdown-menu{ background:none;}
+  .navbar-default { background:none; border:0; color:#fff;}
+  .navbar-default .navbar-nav>li>a {color: #fff;}
+  .navbar-nav {float:right;  margin: 0; font-size:16px;}
+	.navbar-wrapper {margin-top:0px; padding:0; background:#000;}
+    .navbar-inverse {background:#000; border:none;}
+	.navbar-inverse .navbar-nav>li>a {color:#fff; line-height:40px; padding:0 35px;}
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+	 .gallery-top {
+      height: 80%;
+      width: 100%;
+    }
+    .gallery-thumbs {
+      height: 20%;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+    .gallery-thumbs .swiper-slide {
+      height: 100%;
+      opacity: 0.4;
+    }
+    .gallery-thumbs .swiper-slide-active {
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body style="background:#032730;">
+    <div class="navbar-wrapper" style=" width:100%; height:50px;">
+      <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">
+              <img src="../img/logo.png" alt="" class="logo duiqi"><span class="white">MITECH</span>
+              </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">首页</a></li>
+                <li class="active"><a href="token.html">令牌</a></li>
+                <li><a href="index.html#team">团队 </a></li>
+                <li><a href="#">白皮书</a></li>
+                <li><a href="question.html">常见问题</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+	<div class="question">
+	<div class="container question_jt">
+	<div class="col-lg-12 white">
+	<p class="size14">Mitech是基于区块链的物联网开源系统，能解决现有物联网上的一些隐私、安全和兼容上的缺陷，达到安全地存储来自采集器的数据，并在分类账上进行验证。在未来，我们将实现智能化识别、定位、跟踪、监控和管理的一种低成本、隐私保护的安全网络，拥有自己数据的网络系统。</p>
+	<p><b>我们的核心技术</b></p>
+	<p class="size14">1. 通信:MI采用P2P技术来组织各个网络节点，每个节点通过多播实现路由、新节点识别和数据传播等功能，智能识别到数据信息并完成传感需求
+    <br>2. 存储:MI数据在运行期以块链式数据结构存储在内存中，最终会持久化存储到数据库中。对于较大的文件，也可存储在链外的文件系统里，同时将摘要(数字指纹)保存到链上用以自证
+    <br>3. 安全机制:MI系统通过多种密码学原理进行数据加密及隐私保护。完全超越其他涉及到金融应用的区块链系统，高强度高可靠的安全算法达到国密级别，在效率上世界领先
+    <br>4. 共识机制:在MI系统中各个节点达成一致的策略和方法，根据系统类型及应用场景的不同灵活选取。PBFT该共识机制允许拜占庭容错。该共识机制允许强监管节点参与，具备权限分级能力，性能更高，耗能更低</p>
+	<br>
+	<p><b>代币结构</b></p>
+	<p class="size14">代币总量：999,990,000<br>天使轮：200,000,000，锁仓1年，每季度线形释放，已完成<br><br>私募：99,990,000<br>私募比例：1ETH=16666MIT<br>软 顶：2500ETH<br>硬 顶：5000ETH<br>代币格式：ERC20<br>私募时间：2018年6月15日20:00-2018年6月22日20:00，令牌销售前2天或售出30%的代币之前（两者其先为准），我们将向首批投资者提供10%的奖励。</p>
+	<br>
+	<p><b>资金用途</b></p>
+	<p class="juzhong"><img src="../img/sx.png"></p>
+	<p class="size14">48% 产品研发<br>26% 运营布局<br>16% 营销策略<br>10% 法律</p>
+	<p></p>
+	</div>
+	</div>
+	<div class="container">
+	<div class="col-lg-12 juzhong juli_top15"><img src="../img/logo.png"><p>©2017 MITECH  |  保留所有权利</p></div>
+	</div>
+	</div>
+
+  <div class="xiala">
+  <div class="dropdown">
+	<button type="button" class="btn dropdown-toggle" id="dropdownMenu1"
+			data-toggle="dropdown" style="background:none; color:#fff;">
+		中文
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="https://mitech.im/english/token.html">英文</a>
+		</li>
+	</ul>
+</div>
+  </div>
+
+
+ <script src="../js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

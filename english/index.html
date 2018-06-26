@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mitech</title>
+  <link rel="icon" href="../img/mitech.ico" type="image/x-icon"/>
+    <meta name="keywords" content="Mitech" />
+    <meta name="description" content="Mitech" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="email=no" name="format-detection">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+
+  <!-- Link Swiper's CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/css.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/lightbox.css" media="screen"/>
+  <link rel="stylesheet" href="../css/video-js.css" />
+  <script type="text/javascript" src="../js/video.min.js" ></script>
+  <script type="text/javascript" src="../js/jquery-1.11.1.min.js" ></script>
+  <script type="text/javascript" src="../js/swiper.min.js" ></script>
+  <!-- Demo styles -->
+  <style>.dropdown-menu>li>a {
+	  display:block;
+    padding: 3px 20px;
+    clear: both;
+    color: #000;
+    white-space: nowrap;
+	background:#fff;
+}
+.dropdown-menu{ background:none;}
+  .navbar-default { background:none; border:0; color:#fff;}
+  .navbar-default .navbar-nav>li>a {color: #fff;}
+  .navbar-nav {float:right;  margin: 0; font-size:16px;}
+	.navbar-wrapper {margin-top:0px; padding:0; background:#000;}
+    .navbar-inverse {background:#000; border:none;}
+	.navbar-inverse .navbar-nav>li>a {color:#fff; line-height:40px; padding:0 35px;}
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+	 .gallery-top {
+      height: 80%;
+      width: 100%;
+    }
+    .gallery-thumbs {
+      height: 20%;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+    .gallery-thumbs .swiper-slide {
+      height: 100%;
+      opacity: 0.4;
+    }
+    .gallery-thumbs .swiper-slide-active {
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+<!--
+ <div class="index_pupup" style="display: block;">
+		<div class="index_content">
+			<div class="close1">
+
+             <div class="col-lg-12 visible-lg-block">
+    <div class="dizhi_tc">
+    Contract address:
+    <div class="baohan">
+   <input id="foo" type="text" value="0xD9bDd6be8E9Ef902C349fbA72C032B0D22dF05A6" class="baohan_inut" readonly="readonly">
+<button class="btn1 button" data-clipboard-action="copy" data-clipboard-target="#foo">Copy</button>
+    </div>
+    <div class="erweima juzhong"><img src="/img/erweima.png"></div>
+    <p>Note: as far as possible, use MyEtherWallet, Mist, Imtoken and other ERC20 purse to change money. If you use the exchange currency, please contact our official staff for registration.</p>
+<p class="closezcbtn" style="display:block; width: 100px; height:30px; line-height:30px; text-align: center; font-size: 16px; border: #FFF solid 1px; margin: 0 auto; cursor: pointer;">Close</p>
+    </div>
+    </div>
+
+    <div class="col-xs-12 visible-xs-block">
+    <div class="dizhi_tc">
+    Contract address:
+    <div class="baohan">
+   <input id="foo2" type="text" value="0xD9bDd6be8E9Ef902C349fbA72C032B0D22dF05A6" class="moblie_baohan_input" readonly="readonly">
+<button class="btn1 moblie_button" data-clipboard-action="copy" data-clipboard-target="#foo2">Copy</button>
+    </div>
+    <div class="erweima juzhong"><img src="/img/erweima.png"></div>
+    <p>Note: as far as possible, use MyEtherWallet, Mist, Imtoken and other ERC20 purse to change money. If you use the exchange currency, please contact our official staff for registration.</p>
+	<p class="closezcbtn" style="display:block; width: 100px; height:30px; line-height:30px; text-align: center; font-size: 16px; border: #FFF solid 1px; margin: 0 auto; cursor: pointer;">Close</p>
+    </div>
+    </div>
+
+            </div>
+		</div>
+	</div>
+-->
+<script>
+$('.closezcbtn').click(function(){$('.index_pupup').hide()});
+</script>
+
+    <div class="navbar-wrapper" style="position:fixed; top:0; width:100%; z-index:100; height:50px;">
+      <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">
+              <img src="../img/logo.png" alt="" class="logo duiqi"><span class="white">MITECH</span>
+              </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="token.html">Token</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a  href="#">White Paper</a></li>
+                <li><a href="question.html">Problem</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+      <div class="one">
+      <div class="container">
+      <div class="col-lg-12 juli_top mit"><img src="../img/logo1.png"><p class="size24 white">MITECH</p></div>
+      <div class="col-lg-12 juli_top1 img_change blue"><b>The open source system of Internet of things based on block chain</b></div>
+ <div class="col-lg-12 juzhong juli_top15">
+
+      </div>
+      <div class="col-lg-12 juli_top2"><a href="#" class="anniu play-video-btn">Watch Video<img src="../img/go.png" class="duiqi"></a></div>
+      </div>
+      </div>
+      </div>
+
+      <div class="swiper-slide">
+      <div class="two">
+      <div class="container">
+      <div class="col-lg-12 blue juli_top"><b>Mitech's data is permanently stored in blocks</b></div>
+      <div class="col-lg-12 juli_top1 white juli_left jianju">The blocks are generated and linked successively in time sequence, and each block records all transaction information that occurs during the creation period. Block data structure is generally divided into district size (header) and block (body), Mitech district's link to the previous blocks and to ensure the integrity of historical data through the time stamp characteristics; block contains all transaction information generated after verification of the block, in the process of creating.</div>
+      <div class="col-lg-12 juli_top15"><img src="../img/1.gif"></div>
+      </div>
+      </div>
+      </div>
+      <div class="swiper-slide">
+      <div class="three">
+      <div class="container">
+      <div class="col-lg-12 blue juli_top"><b>Our core technology</b></div>
+      <div class="col-lg-12 juli_top1 white juli_left jianju">Communication: Mitech uses P2P technology to organize all network nodes. Each node realizes functions such as routing, new node identification and data dissemination through multicast, and intelligently identifies data information and completes sensor needs.</div>
+      </div>
+      </div>
+      </div>
+      <div class="swiper-slide">
+      <div class="four">
+      <div class="container">
+      <div class="col-lg-12 juli_top white juli_left jianju"> Storage: Mitech data is stored in memory in a block chain data structure during runtime and will eventually be persisted to the database. For larger files, it can also be stored in a file system outside the chain, and the digest (digital fingerprint) is saved to the chain for self proof.</div>
+      </div>
+      </div>
+      </div>
+      <div class="swiper-slide">
+      <div class="five">
+      <div class="container">
+      <div class="col-lg-12 juli_top white juli_left jianju">Security mechanism: Mitech system uses a variety of cryptographic principles to encrypt data and protect privacy. Completely surpassing other block chain systems involved in financial applications, high and reliable security algorithms reach the national level, leading the world in efficiency.</div>
+      </div>
+      </div>
+      </div>
+      <div class="swiper-slide">
+      <div class="six">
+       <div class="container">
+      <div class="col-lg-12 juli_top white juli_left jianju">Consensus mechanism: each node in the Mitech system achieves a consistent strategy and method, which is selected flexibly according to the different types of system and the application scenario. PBFT the consensus mechanism allows Byzantine fault tolerance. The consensus mechanism allows the participation of strong regulatory nodes, has the ability to classify the authority, the performance is higher, and the energy consumption is lower.
+</div>
+      </div>
+      </div>
+      </div>
+      <div class="swiper-slide">
+      <div class="seven">
+      <div class="container">
+      <div class="col-lg-12 juli_top blue"><b>development history</b></div>
+      <div class="col-lg-12 juli_top1 fazhan"><img src="../img/licheng1.png"></div>
+      </div>
+      </div>
+      </div>
+      <div class="swiper-slide">
+      <div class="nine">
+      <div class="container">
+      <div class="col-lg-12 juli_top blue"><b>Activity scene</b></div>
+<style>@media screen and (min-width: 1200px) {
+.hyhy1{ margin-top: 0.5rem; width: 33%; }
+.hyhy2{ width: 200px; height: 200px; }
+}
+</style>
+      <!--现场照片-->
+      <div class="col-lg-12 juli_top3" style="overflow-y:auto;">
+       	  <div class="col-lg-3 juli_top1 col-xs-6 hyhy1"><a class="example-image-link" href="../upload/994cdc48-a59c-4f6c-9d5a-d309c75d663b.jpg" data-lightbox="example-set"><img class="example-image hyhy2" src="../upload/994cdc48-a59c-4f6c-9d5a-d309c75d663b.jpg" width="150" height="150" style="border:3px solid #eee;"/></a></div>
+       	  <div class="col-lg-3 juli_top1 col-xs-6 hyhy1"><a class="example-image-link" href="../upload/bc23ee1e-2cc2-4cc7-847b-623439854c78.jpg" data-lightbox="example-set"><img class="example-image hyhy2" src="../upload/bc23ee1e-2cc2-4cc7-847b-623439854c78.jpg" width="150" height="150" style="border:3px solid #eee;"/></a></div>
+       	  <div class="col-lg-3 juli_top1 col-xs-6 hyhy1"><a class="example-image-link" href="../upload/b9837285-3045-43de-87a7-df16b86a8abf.jpg" data-lightbox="example-set"><img class="example-image hyhy2" src="../upload/b9837285-3045-43de-87a7-df16b86a8abf.jpg" width="150" height="150" style="border:3px solid #eee;"/></a></div>
+       	  <div class="col-lg-3 juli_top1 col-xs-6 hyhy1"><a class="example-image-link" href="../upload/b11b0c3b-f5dd-44b2-ab77-596739ec4d1e.jpg" data-lightbox="example-set"><img class="example-image hyhy2" src="../upload/b11b0c3b-f5dd-44b2-ab77-596739ec4d1e.jpg" width="150" height="150" style="border:3px solid #eee;"/></a></div>
+       	  <div class="col-lg-3 juli_top1 col-xs-6 hyhy1"><a class="example-image-link" href="../upload/942a7fef-3cba-4000-b025-3f465cc26bb7.jpg" data-lightbox="example-set"><img class="example-image hyhy2" src="../upload/942a7fef-3cba-4000-b025-3f465cc26bb7.jpg" width="150" height="150" style="border:3px solid #eee;"/></a></div>
+       	  <div class="col-lg-3 juli_top1 col-xs-6 hyhy1"><a class="example-image-link" href="../upload/48d0ac79-8e5c-444d-9e55-a6050961ad50.jpg" data-lightbox="example-set"><img class="example-image hyhy2" src="../upload/48d0ac79-8e5c-444d-9e55-a6050961ad50.jpg" width="150" height="150" style="border:3px solid #eee;"/></a></div>
+            </div>
+      <!--现场照片结束-->
+      </div>
+      </div>
+      </div>
+      <div class="swiper-slide" id="team">
+      <div class="team">
+      <div class="container">
+      <div class="col-lg-12 juli_top blue"><b>Team</b></div>
+      </div>
+      <div class="container">
+            <div class="col-lg-3 juli_top15 col-xs-6">
+      <div class="team_jt">
+      <div class="team_jt1"><div class="team_head"><img src="../upload/cc339817-e690-4620-a8bb-e47b2d71025a.jpg"></div><p class="white">SanthCEO Co - Founder<br><span  class="size14 white"></span></p><p class="white juli_top15 jiesao juli_left">Professor of computer science at the National University of Singapore, mainly engaged
+in the research on the safety of the block chain and the Internet of things. A number of
+major awards at the TR35 Asia of Massachusetts Institute of Technology have been
+awarded. He has a bachelor's degree in Computer Engineering and a master's degree
+in management. Santh has successfully promoted several complex projects with millions
+of dollars and achieved excellent results. We are very enthusiastic about the block
+chain and the encrypted digital currency technology, and believe in the future of centralization.
+The scope of professional knowledge is extensive, including but not limited to
+block chain business integration, strategic planning, project management, architecture
+solution, process improvement, public speaking, corporate communication and cross
+functional leadership.</p></div>
+      </div>
+      </div>
+            <div class="col-lg-3 juli_top15 col-xs-6">
+      <div class="team_jt">
+      <div class="team_jt1"><div class="team_head"><img src="../upload/f811cee1-5950-4359-bbe8-9e0215ab9bb1.png"></div><p class="white">KhalCTO Co - Founder<br><span  class="size14 white"></span></p><p class="white juli_top15 jiesao juli_left">MIT PhD in computer science has studied the incentive mechanism of game theory and
+formal verification of intelligent contracts in the block chain protocol for many years.
+Many loopholes have been found in the ether Fang's vulnerability incentive plan. It's an
+experienced software developer. He was a member of the data structure and algorithmic
+team, and the team has developed a new data structure for IP routing</p></div>
+      </div>
+      </div>
+            <div class="col-lg-3 juli_top15 col-xs-6">
+      <div class="team_jt">
+      <div class="team_jt1"><div class="team_head"><img src="../upload/63a6f044-98bd-48bd-bbec-32ec61c56d63.jpg"></div><p class="white">Miklos chief engineer and co - Founder<br><span  class="size14 white"></span></p><p class="white juli_top15 jiesao juli_left">Doctor of Engineering in Singapore electronics industry (graduated from University of
+Minnesota). He served as a senior member of IEEE, Hubele labs, Honey Well Company
+and senior expert in the field of IC design.</p></div>
+      </div>
+      </div>
+            <div class="col-lg-3 juli_top15 col-xs-6">
+      <div class="team_jt">
+      <div class="team_jt1"><div class="team_head"><img src="../upload/54bf1b6b-0e6c-453e-8925-d154fd97db9e.jpg"></div><p class="white">Leonid Miretsky<br><span  class="size14 white"></span></p><p class="white juli_top15 jiesao juli_left">MIT MIT has more than 10 years experience in embedded system hardware and software
+design and development, and has been working on RFID and block chain technology
+in the field of IOT for many years</p></div>
+      </div>
+      </div>
+            </div>
+      </div>
+      </div>
+
+   	        <div class="swiper-slide">
+      <div class="team">
+       <div class="container">
+      <div class="col-lg-12 juli_top blue"><b></b></div>
+      </div>
+      <div class="container">
+            <div class="col-lg-3 juli_top15 col-xs-6">
+      <div class="team_jt">
+      <div class="team_jt1"><div class="team_head"><img src="../upload/860ebb3e-4fe3-4ca7-9284-9bc63acdbc68.jpg"></div><p class="white">Drew Landis<br><span  class="size14 white"></span></p><p class="white juli_top15 jiesao juli_left">Senior back end engineer and Linux system administrator. He has developed a large
+infrastructure for multiple social marketing platforms and advertising networks, and has
+accumulated rich experience. He is also interested in building high performance multi
+platform applications. Drew Landis began the development of block chain and encrypted
+currency in early 2015.</p></div>
+      </div>
+      </div>
+            <div class="col-lg-3 juli_top15 col-xs-6">
+      <div class="team_jt">
+      <div class="team_jt1"><div class="team_head"><img src="../upload/70c49efb-d65e-4605-8411-a21fdef07949.jpg"></div><p class="white">David Vaknin<br><span  class="size14 white"></span></p><p class="white juli_top15 jiesao juli_left">MIT master of engineering has 5 years experience in VLSI design and verification, and
+has rich experience in RFID chip design process, SOC chip architecture, digital analog
+mixed circuit design and so on. We have led the team to complete a number of navigation
+and positioning baseband chips, the development of communication baseband
+chips, and completed the design of AES, DES and other encryption modules. The principle
+of the underlying consensus mechanism of the block chain and the related asymmetric
+encryption algorithm.</p></div>
+      </div>
+      </div>
+            <div class="col-lg-3 juli_top15 col-xs-6">
+      <div class="team_jt">
+      <div class="team_jt1"><div class="team_head"><img src="../upload/5d82bd98-1a06-453f-b90c-4a8a2db76c5c.jpg"></div><p class="white">Kathleen<br><span  class="size14 white"></span></p><p class="white juli_top15 jiesao juli_left">Business management professional, Armstrong university degree BBA, senior financial
+experts, 13 years working experience in finance, strategy of policy formulation and
+implementation of corporate strategy, business plan, a very rich practical experience to
+achieve business management objectives and development goals.</p></div>
+      </div>
+      </div>
+            <div class="col-lg-3 juli_top15 col-xs-6">
+      <div class="team_jt">
+      <div class="team_jt1"><div class="team_head"><img src="../upload/5b92ff21-4b10-40c8-9094-ffe5784c3290.jpg"></div><p class="white">Hiromitsu Hattori<br><span  class="size14 white"></span></p><p class="white juli_top15 jiesao juli_left">In Seoul, Korea, Korea University, master of Engineering in Korea, and member of
+Korean Industrial Association, its research achievements have been published in the
+world's top journal Nature communication, and participated in the preparation of IOT
+engineering textbook "Introduction to Internet of things". The current research direction
+covers the cross discipline of the combination of block chain technology and the security
+technology of the Internet of things.</p></div>
+      </div>
+      </div>
+            </div>
+      </div>
+      </div>
+
+      <div class="swiper-slide">
+      <div class="hezuo">
+      <div class="container">
+      <div class="col-lg-12 juli_top blue"><b>Investment institution</b></div>
+      </div>
+      <div class="container juli_top">
+      <div class="col-lg-12">
+      <div class="col-lg-3 juli_top1 col-xs-6"><img src="../img/friends1.png" width="70%"></div>
+      <div class="col-lg-3 juli_top1 col-xs-6"><img src="../img/friends2.png" width="35%"></div>
+       <div class="col-lg-3 juli_top1 col-xs-6"><img src="../img/friends3.png" width="80%"></div>
+      <div class="col-lg-3 juli_top1 col-xs-6"><img src="../img/friends4.png" width="30%"></div>
+      </div>
+      <div class="col-lg-12 juli_top15">
+      <div class="col-lg-3 juli_top1 col-xs-6"><img src="../img/friends5.png" width="70%"></div>
+      <div class="col-lg-3 juli_top1 col-xs-6"><img src="../img/friends6.png" width="70%"></div>
+       <div class="col-lg-3 juli_top1 col-xs-6"><img src="../img/friends7.png" width="50%"></div>
+      <div class="col-lg-3 juli_top1 col-xs-6"><img src="../img/friends8.png" width="30%"></div>
+      </div>
+      </div>
+      </div>
+      </div>
+
+      <div class="swiper-slide">
+      <div class="link">
+      <div class="container">
+      <div class="col-lg-12 juli_top blue"><b>Contact us</b></div>
+      <div class="col-lg-12 juli_top link_us footer_flex clearfix">
+      <div class="col-lg-3 juli_top1">
+      <li>
+          <img src="../img/pic1.png" class='img-n'>
+          <div class="flex-footer" style=" background:url('../img/youjian.png') no-repeat center top; width:210px; height:58px; top:-80px; left:8%;">
+             support@mitech.im
+          </div>
+      </li>
+      </div>
+      <div class="col-lg-3 juli_top1"><a href="https://twitter.com/mitech_im" target="_blank"><img src="../img/pic2.png"></a></div>
+      <div class="col-lg-3 juli_top1">
+       <li>
+          <img src="../img/pic3.png" class='img-n'>
+          <div class="flex-footer">
+              <img src="../img/flexewmpic2.png" width="100%">
+          </div>
+      </li>
+      </div>
+      <div class="col-lg-3 juli_top1"><a href="https://t.me/frommitech" target="_blank"><img src="../img/pic4.png"></a></div>
+
+      </div>
+      <div class="col-lg-12 juli_top4"><img src="../img/logo.png"><p class="white size14">©2017 MITECH  |  All Rights Reserved</p></div>
+      </div>
+      </div>
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="xiala">
+  <div class="dropdown">
+	<button type="button" class="btn dropdown-toggle" id="dropdownMenu1"
+			data-toggle="dropdown" style="background:none; color:#fff;">
+		English
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="../chinese/index.html">Chinese</a>
+		</li>
+	</ul>
+</div>
+  </div>
+  	<!--关闭-->
+		<div class="close-video" style="display:none;"></div>
+		<!--视频-->
+		<div class="video" style="display:none;">
+			<video id="my-video" class="video-js" controls preload="auto"  width="376" height="282">
+				<!-- <source src="http://www.mitech.im/img/mi_1.mp4" type="video/mp4"> -->
+		 	 </video>
+		</div>
+	</div>
+
+
+
+
+<!--复制-->
+<script src="../js/clipboard.min.js"></script>
+<script>
+var clipboard = new Clipboard('.btn1');
+clipboard.on('success', function(e) {
+	console.log(e);
+});
+clipboard.on('error', function(e) {
+	console.log(e);
+});
+</script>
+
+<script type="text/javascript">
+	//视频播放
+	var myPlayer = videojs('my-video');
+	videojs("my-video").ready(function(){
+		var myPlayer = this;
+		//公司视频播放
+		$(".btn-video ,.play-video-btn").click(function(){
+			$('#my-video_html5_api').attr('src','https://hlkj-cdnjs150.oss-cn-hangzhou.aliyuncs.com/ah/mit/img/mi_1.mp4');
+ 			$('#my-video_html5_api source').attr('src','https://hlkj-cdnjs150.oss-cn-hangzhou.aliyuncs.com/ah/mit/img/mi_1.mp4');
+		 	$('.video ,.close-video').show();
+    		myPlayer.play();
+		});
+		//关闭视频
+    	$(".close-video").click(function(){
+		 	$('.video ,.close-video').hide();
+        	myPlayer.pause();
+     	});
+
+	});
+
+	//员工视频
+	function open_video(index){
+ 		$('#my-video_html5_api').attr('src','../image/'+index+'.mp4');
+ 		$('#my-video_html5_api source').attr('src','../image/'+index+'.mp4');
+ 		$('.video ,.close-video').show();
+		myPlayer.play();
+ 	}
+</script>
+ <script src="../js/jquery-1.10.2.min.js"></script>
+ <script src="../js/lightbox-2.6.min.js"></script>
+ <script src="../js/jquery.min.js"></script>
+ <script src="../js/bootstrap.min.js"></script>
+
+  <!-- Initialize Swiper -->
+ <script>
+ var swiper = new Swiper('.swiper-container', {
+     direction: 'vertical',
+     slidesPerView: 1,
+     spaceBetween: 0,
+     mousewheel: true,
+     pagination: {
+       el: '.swiper-pagination',
+       clickable: true,
+     },
+ });
+</script>
+<!--弹出111-->
+
+</body>
+</html>
